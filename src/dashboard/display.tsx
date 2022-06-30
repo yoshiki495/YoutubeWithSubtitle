@@ -1,5 +1,5 @@
 import * as React from 'react';
-import YouTubeContent from './youtube'
+import {YouTubeContent, GetSubtitles} from './youtube'
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
 import Dvr from '@mui/icons-material/Dvr';
@@ -72,9 +72,7 @@ export default function Album() {
                         Album layout
                         </Typography>
                         <Typography variant="h5" align="center" color="text.secondary" paragraph>
-                        Something short and leading about the collection below—its contents,
-                        the creator, etc. Make it short and sweet, but not too short so folks
-                        don&apos;t simply skip over it entirely.
+                        ここに字幕入れたい。
                         </Typography>
                         <Stack
                         sx={{ pt: 4 }}
