@@ -1,11 +1,8 @@
-import React, {useState, useEffect} from 'react'
+import {useState, useEffect} from 'react'
 import YouTube from 'react-youtube';
 import {
-    YoutubeCaption, 
-    getSubtitles, 
-    getSubtitlesContent 
-    } from '@drorgl/youtube-captions-scraper';
-import { ConnectedTvOutlined } from '@mui/icons-material';
+  useParams
+} from 'react-router-dom';
 
 function YouTubeContent() {
   return (
@@ -16,9 +13,10 @@ function YouTubeContent() {
 const Fetch = () => {
 
   const [posts, setPosts] = useState([])
+  console.log(UrlParameter());
 
   useEffect(() => {
-      fetch('https://oudi6xgb04.execute-api.ap-northeast-1.amazonaws.com/default/GetYoutubeInfo', {method: 'GET'})
+      fetch('https://oudi6xgb04.execute-api.ap-northeast-1.amazonaws.com/default/GetYoutubeInfo/?param=' + "3zN8d6TxmzE", {method: 'GET'})
       .then(res => res.json())
       .then(data => {
           console.log(data)
@@ -28,16 +26,18 @@ const Fetch = () => {
 
   return (
       <div>
-          <ul>
               {
                   posts.map(post => 
-                    <p>{post.text}</p>
+                    <p key={post.text}>{post.text}</p>
                   )
               }
-          </ul>
-
       </div>
   )
+}
+
+const UrlParameter = () => {
+  const  {params} = useParams();
+  return {params};
 }
 
 

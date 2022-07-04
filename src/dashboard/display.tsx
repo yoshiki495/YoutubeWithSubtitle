@@ -1,6 +1,5 @@
-import * as React from 'react';
 import {YouTubeContent, Fetch} from './youtube'
-import ApiFetch from './dictionary';
+import { Translate } from './translation'
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
 import Dvr from '@mui/icons-material/Dvr';
@@ -14,12 +13,6 @@ import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-declare module JSX {
-  interface IntrinsicElements {
-    componentDidMount: any;
-  }
-}
-
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
@@ -32,8 +25,6 @@ function Copyright() {
     </Typography>
   );
 }
-
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const theme = createTheme();
 
@@ -65,17 +56,7 @@ export default function Album() {
                 </Grid>
                 <Grid item md={6} sx={{ pr: 8 }}>
                     <Container maxWidth="sm">
-                        <Typography
-                        component="h1"
-                        variant="h2"
-                        align="center"
-                        color="text.primary"
-                        gutterBottom
-                        >
-                        Album layout
-                        </Typography>
                         <Typography variant="h5" align="center" color="text.secondary" paragraph>
-                        ここに字幕入れたい。
                         {/*< ApiFetch />*/}
                         < Fetch />
                         </Typography>
