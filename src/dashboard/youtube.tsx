@@ -31,7 +31,7 @@ const Fetch = () => {
           <ul>
               {
                   posts.map(post => 
-                  <li key={post.id}>{post.title}</li>
+                    <p>{post.text}</p>
                   )
               }
           </ul>
