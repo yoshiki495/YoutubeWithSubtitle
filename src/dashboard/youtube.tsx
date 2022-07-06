@@ -1,22 +1,20 @@
 import {useState, useEffect} from 'react'
 import YouTube from 'react-youtube';
-import {
-  useParams
-} from 'react-router-dom';
 
 function YouTubeContent() {
+  const param = UrlParameter().replace('?param=', '');
   return (
-    <YouTube videoId="3zN8d6TxmzE" />
+    <YouTube videoId={param} />
   );
 }
 
 const Fetch = () => {
 
   const [posts, setPosts] = useState([])
-  console.log(UrlParameter());
+  const param = UrlParameter();
 
   useEffect(() => {
-      fetch('https://oudi6xgb04.execute-api.ap-northeast-1.amazonaws.com/default/GetYoutubeInfo/?param=' + "3zN8d6TxmzE", {method: 'GET'})
+      fetch('https://oudi6xgb04.execute-api.ap-northeast-1.amazonaws.com/default/GetYoutubeInfo/' + param, {method: 'GET'})
       .then(res => res.json())
       .then(data => {
           console.log(data)
@@ -25,7 +23,7 @@ const Fetch = () => {
   },[])
 
   return (
-      <div>
+      <div style={{overflow:'scroll', height:'360px'}}>
               {
                   posts.map(post => 
                     <p key={post.text}>{post.text}</p>
@@ -36,8 +34,8 @@ const Fetch = () => {
 }
 
 const UrlParameter = () => {
-  const  {params} = useParams();
-  return {params};
+  const param = window.location.search;
+  return param;
 }
 
 

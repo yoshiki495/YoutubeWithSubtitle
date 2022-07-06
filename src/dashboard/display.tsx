@@ -46,16 +46,16 @@ export default function Album() {
           sx={{
             bgcolor: 'background.paper',
             justifyContent: 'space-evenly',
-            pt: 8,
+            pt: 6,
             pb: 6,
           }}
         >
             <Grid container>
-                <Grid item md={6} sx={{ pl: 8 }}>
+                <Grid item md={6} sx={{ pl: 6 }}>
                     <YouTubeContent />
                 </Grid>
-                <Grid item md={6} sx={{ pr: 8 }}>
-                    <Container maxWidth="sm">
+                <Grid item md={6} sx={{ pr: 6 }} >
+                    <Container maxWidth="md">
                         <Typography variant="h5" align="center" color="text.secondary" paragraph>
                         {/*< ApiFetch />*/}
                         < Fetch />
