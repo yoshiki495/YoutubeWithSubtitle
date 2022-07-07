@@ -47,7 +47,6 @@ export default function Album() {
             bgcolor: 'background.paper',
             justifyContent: 'space-evenly',
             pt: 6,
-            pb: 6,
           }}
         >
             <Grid container>
