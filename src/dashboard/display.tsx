@@ -1,5 +1,4 @@
 import {YouTubeContent, Fetch} from './youtube'
-import { Translate } from './translation'
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
 import Dvr from '@mui/icons-material/Dvr';
