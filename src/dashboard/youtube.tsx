@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
 import YouTube from 'react-youtube';
+import { TextField } from '@mui/material';
 
 function YouTubeContent() {
   const param = UrlParameter().replace('?param=', '');
@@ -33,9 +34,28 @@ const Fetch = () => {
   )
 }
 
+const ManualPaste = () => {
+  return (
+    <TextField
+      id="outlined-multiline-static"
+      multiline
+      rows={14}
+      style = {{width: 625}}
+    />
+  )
+}
+
 const UrlParameter = () => {
   const param = window.location.search;
   return param;
+}
+
+const Display = (props) =>{
+  if(props.auto == true){
+    return <Fetch/>
+  }else{
+    return <ManualPaste/>
+  }
 }
 
 

@@ -11,6 +11,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { fontGrid } from '@mui/material/styles/cssUtils';
 
 function Copyright() {
   return (
@@ -55,8 +56,7 @@ export default function Album() {
                 <Grid item md={6} sx={{ pr: 6 }} >
                     <Container maxWidth="md">
                         <Typography variant="h5" align="center" color="text.secondary" paragraph>
-                        {/*< ApiFetch />*/}
-                        < Fetch />
+                          < Fetch />
                         </Typography>
                         <Stack
                         sx={{ pt: 4 }}
