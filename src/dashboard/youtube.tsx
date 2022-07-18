@@ -15,7 +15,7 @@ const Fetch = () => {
   const param = UrlParameter();
 
   useEffect(() => {
-      fetch(process.env.REACT_APP_ENDPOINT_TO_GET_YOUTUBE_INFO + param, {method: 'GET'})
+      fetch('https://oudi6xgb04.execute-api.ap-northeast-1.amazonaws.com/default/GetYoutubeInfo/' + param, {method: 'GET'})
       .then(res => res.json())
       .then(data => {
           console.log(data)
